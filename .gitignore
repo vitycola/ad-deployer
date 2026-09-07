@@ -1,0 +1,27 @@
+# Secretos / entorno
+.env
+.env.*
+!.env.example
+
+# Dependencias
+node_modules/
+
+# Build
+dist/
+*.tsbuildinfo
+
+# Config local de herramientas
+.claude/
+.atl/
+
+# Sistema
+.DS_Store
+*.log
+
+# Media local (los creativos se referencian por ruta absoluta, no se versionan)
+data/creatives/
+
+# Estrategias reales: solo se versiona la plantilla
+data/*.json
+data/*.txt
+!data/strategy.example.json

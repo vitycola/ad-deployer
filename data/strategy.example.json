@@ -1,0 +1,49 @@
+{
+  "_comentario": "Plantilla de estrategia. Copia este archivo a data/<lo-que-sea>.json (el resto de data/*.json esta ignorado por git) y ajusta los valores. daily_budget va en centimos. Todo se crea en estado PAUSED; la activacion es manual.",
+  "campaign": {
+    "name": "Campaña de ejemplo | Alcance",
+    "objective": "OUTCOME_AWARENESS",
+    "status": "PAUSED"
+  },
+  "adSet": {
+    "name": "Conjunto de ejemplo",
+    "daily_budget": 500,
+    "billing_event": "IMPRESSIONS",
+    "optimization_goal": "REACH",
+    "bid_strategy": "LOWEST_COST_WITHOUT_CAP",
+    "start_time": "2026-01-01T00:00:00+0100",
+    "end_time": "2026-01-10T20:00:00+0100",
+    "frequency_control_specs": [
+      { "event": "IMPRESSIONS", "interval_days": 3, "max_frequency": 2 }
+    ],
+    "targeting": {
+      "age_min": 25,
+      "age_max": 50,
+      "geo_locations": {
+        "custom_locations": [
+          { "latitude": 40.4168, "longitude": -3.7038, "radius": 30, "distance_unit": "kilometer" }
+        ],
+        "location_types": ["home", "recent"]
+      }
+    },
+    "exclude_audience_ids": []
+  },
+  "ads": [
+    {
+      "name": "Anuncio de ejemplo - Video",
+      "type": "video",
+      "creative_path": "/ruta/absoluta/al/video.mp4",
+      "primary_text": "Texto principal del anuncio.\nSegunda linea opcional.",
+      "headline": "Titular del anuncio"
+    },
+    {
+      "name": "Anuncio de ejemplo - Imagen",
+      "type": "image",
+      "creative_path": "/ruta/absoluta/a/la/imagen.jpg",
+      "primary_text": "Texto principal del anuncio de imagen.",
+      "headline": "Titular",
+      "call_to_action": "LEARN_MORE",
+      "link_url": "https://example.com/"
+    }
+  ]
+}
