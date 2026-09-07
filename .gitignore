@@ -25,3 +25,7 @@ data/creatives/
 data/*.json
 data/*.txt
 !data/strategy.example.json
+
+# Documentación interna (no se publica)
+AGENTS.md
+_internal/
