@@ -39,6 +39,7 @@ export class AdSetDeployer {
       if (adSetData.start_time) adSetParams.start_time = adSetData.start_time;
       if (adSetData.end_time) adSetParams.end_time = adSetData.end_time;
       if (adSetData.frequency_control_specs) adSetParams.frequency_control_specs = adSetData.frequency_control_specs;
+      if (adSetData.promoted_object) adSetParams.promoted_object = adSetData.promoted_object;
 
       const adSet = await account.createAdSet([], adSetParams);
       console.log(`✅ Conjunto de anuncios creado exitosamente. ID: ${adSet.id}`);
