@@ -95,7 +95,8 @@ async function fetchCampaignData(keyword: string): Promise<ParsedCampaign[]> {
           videoP75: extractAction(ins.video_p75_watched_actions, 'video_view'),
           videoP100: extractAction(ins.video_p100_watched_actions, 'video_view'),
           // Conversions
-          purchases: extractAction(ins.actions, 'purchase') + extractAction(ins.actions, 'offsite_conversion.fb_pixel_purchase'),
+          // 'purchase' ya agrega el evento del pixel; sumarlo a offsite_conversion.fb_pixel_purchase lo cuenta doble.
+          purchases: extractAction(ins.actions, 'purchase'),
           costPerPurchase: extractCostPerAction(ins.cost_per_action_type, 'purchase') || extractCostPerAction(ins.cost_per_action_type, 'offsite_conversion.fb_pixel_purchase'),
           linkClicks: extractAction(ins.actions, 'link_click'),
           costPerLinkClick: extractCostPerAction(ins.cost_per_action_type, 'link_click'),

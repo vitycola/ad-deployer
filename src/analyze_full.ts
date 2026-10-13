@@ -34,7 +34,8 @@ async function run() {
       // sin datos
     }
 
-    const purchases = ins ? act(ins.actions, 'purchase') + act(ins.actions, 'offsite_conversion.fb_pixel_purchase') : 0;
+    // 'purchase' ya agrega el evento del pixel; sumarlo a offsite_conversion.fb_pixel_purchase lo cuenta doble.
+    const purchases = ins ? act(ins.actions, 'purchase') : 0;
     const lpv = ins ? act(ins.actions, 'landing_page_view') : 0;
     const linkClicks = ins ? act(ins.actions, 'link_click') : 0;
     const thruPlays = ins ? act(ins.video_thruplay_watched_actions, 'video_view') : 0;
